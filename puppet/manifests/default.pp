@@ -12,16 +12,21 @@ class { 'apt_get_update':
   stage => preinstall
 }
 
-package { [ 'build-essential', 
-'zlib1g-dev', 
-'libssl-dev', 
-'libreadline-dev', 
-'git-core', 
-'libxml2', 
-'libxml2-dev', 
+package { [ 'build-essential',
+'zlib1g-dev',
+'libssl-dev',
+'libreadline-dev',
+'git-core',
+'libxml2',
+'libxml2-dev',
 'libxslt1-dev',
 'sqlite3',
-'libsqlite3-dev']:
+'libsqlite3-dev',
+'openjdk-7-jre-headless',
+'apache2-utils',
+'httperf',
+'gnuplot-nox',
+'nodejs']:
 ensure => installed,
 }
 
@@ -67,21 +72,43 @@ class install-rvm {
   rvm::system_user { vagrant: ; }
 
   rvm_system_ruby {
-    'ruby-1.9.3-p194':
+    'ruby-1.9.3-p429':
       ensure => 'present',
       default_use => false;
     'ruby-1.8.7-p370':
       ensure => 'present',
       default_use => false;
+    'ruby-enterprise-1.8.7':
+      ensure => 'present',
+      default_use => false;
+    'jruby-1.7.4':
+      ensure => 'present',
+      default_use => false;
   }
 
   rvm_gem {
-    'ruby-1.9.3-p194/bundler': ensure => latest;
-    'ruby-1.9.3-p194/rails': ensure => latest;
-    'ruby-1.9.3-p194/rake': ensure => latest;
+    'ruby-1.9.3-p429/bundler': ensure => latest;
+    'ruby-1.9.3-p429/rails': ensure => latest;
+    'ruby-1.9.3-p429/rake': ensure => latest;
+    'ruby-1.9.3-p429/thin': ensure => latest;
+    'ruby-1.9.3-p429/unicorn': ensure => latest;
+
     'ruby-1.8.7-p370/bundler': ensure => latest;
     'ruby-1.8.7-p370/rails': ensure => latest;
     'ruby-1.8.7-p370/rake': ensure => latest;
+    'ruby-1.8.7-p370/thin': ensure => latest;
+    'ruby-1.8.7-p370/unicorn': ensure => latest;
+
+    'ree-1.8.7-2012.02/bundler': ensure => latest;
+    'ree-1.8.7-2012.02/rails': ensure => latest;
+    'ree-1.8.7-2012.02/rake': ensure => latest;
+    'ree-1.8.7-2012.02/thin': ensure => latest;
+    'ree-1.8.7-2012.02/unicorn': ensure => latest;
+
+    'jruby-1.7.4/bundler': ensure => latest;
+    'jruby-1.7.4/rails': ensure => latest;
+    'jruby-1.7.4/rake': ensure => latest;
+    'jruby-1.7.4/puma': ensure => latest;
   }
 
 }

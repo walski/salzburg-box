@@ -1,0 +1,9 @@
+set ylabel "request"
+set xlabel "response time (ms)"
+set term pngcairo
+set output "/shared/output.png"
+
+binwidth=20
+bin(x,width)=width*floor(x/width)
+
+plot "/tmp/ab.dat" using (bin($9,binwidth)):(1.0) smooth freq with boxes

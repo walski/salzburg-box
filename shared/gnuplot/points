@@ -1,0 +1,7 @@
+set title "ab result"
+set grid y
+set xlabel "request"
+set ylabel "response time (ms)"
+set term pngcairo
+set output "/shared/output.png"
+plot "/tmp/ab.dat" using 9 with points title "test #1"
