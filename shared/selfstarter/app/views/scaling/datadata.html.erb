@@ -1,0 +1,11 @@
+<div class="wrapper center">
+  <h2>Datadata</h2>
+
+  <h3><%= @results.length %> results</h3>
+
+  <ol>
+    <% @results.each do |result| %>
+      <li><%= result.length %> sub results. <% unless result.empty? %>First is: <%= result.first.number %><% end %></li>
+    <% end %>
+  </ol>
+</div>
