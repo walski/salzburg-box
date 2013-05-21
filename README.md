@@ -35,7 +35,7 @@ Port 30000 in the host computer is forwarded to port 3000 in the virtual machine
 
 * Git
 
-* SQLite3, MySQL, and Postgres
+* SQLite3, MySQL, and Postgres, memcached, redis
 
 * RVM (with ruby 1.9.3 and 1.8.7, JRuby and REE installed)
 

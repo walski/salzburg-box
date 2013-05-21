@@ -26,7 +26,9 @@ package { [ 'build-essential',
 'apache2-utils',
 'httperf',
 'gnuplot-nox',
-'nodejs']:
+'nodejs',
+'memcached',
+'redis-server']:
 ensure => installed,
 }
 
