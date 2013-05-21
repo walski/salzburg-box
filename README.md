@@ -1,10 +1,10 @@
-# A Virtual Machine for Ruby on Rails Application Development
+# A Virtual Machine for the Tested Scaling with Rails Workshop
 
 ## Introduction
 
-This project automates the setup of a development environment for general Ruby on Rails application development. 
+This project automates the setup of a development environment for general Ruby on Rails application development.
 
-Inspired by the book ["Deploying Rails"](http://pragprog.com/book/cbdepra/deploying-rails) and fxn's [rails-dev-box](https://github.com/rails/rails-dev-box)
+Based on [https://github.com/amaia/rails-starter-box](https://github.com/amaia/rails-starter-box).
 
 ## Requirements
 
@@ -16,20 +16,20 @@ Inspired by the book ["Deploying Rails"](http://pragprog.com/book/cbdepra/deploy
 
 Building the virtual machine is this easy:
 
-    host $ git clone https://github.com/amaia/rails-starter-box.git
+    host $ git clone https://github.com/walski/salzburg-box.git
     host $ git submodule init
     host $ git submodule update
-    host $ cd rails-starter-box
+    host $ cd salzburg-box
     host $ vagrant up
 
-If the base box is not present that command fetches it first. 
+If the base box is not present that command fetches it first.
 
     host $ vagrant ssh
     Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
     ...
     vagrant@rails-starter-box:~$
 
-Port 3000 in the host computer is forwarded to port 3000 in the virtual machine. Thus, applications running in the virtual machine can be accessed via localhost:3000 in the host computer.
+Port 30000 in the host computer is forwarded to port 3000 in the virtual machine. Thus, applications running in the virtual machine can be accessed via localhost:30000 in the host computer.
 
 ## What's In The Box
 
@@ -37,9 +37,15 @@ Port 3000 in the host computer is forwarded to port 3000 in the virtual machine.
 
 * SQLite3, MySQL, and Postgres
 
-* RVM (with ruby 1.9.3 and 1.8.7 installed)
+* RVM (with ruby 1.9.3 and 1.8.7, JRuby and REE installed)
 
-* Bundler, Rails and Rake gems for both rubies
+* Bundler, Rails and Rake gems for all rubies
+
+* Thin, Unicorn and Puma app servers
+
+* A sample app
+
+* ab, httperf and gnuplot tools
 
 
 ## Recommended Workflow
