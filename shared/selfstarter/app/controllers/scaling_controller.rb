@@ -44,6 +44,10 @@ class ScalingController < ApplicationController
     end
   end
 
+  def recipes
+    @recipes = Recipe.all
+  end
+
   protected
   def random_number
     rand(100)
