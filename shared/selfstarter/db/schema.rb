@@ -11,11 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520230835) do
+ActiveRecord::Schema.define(:version => 20130522024443) do
 
   create_table "dummies", :force => true do |t|
     t.string   "data"
     t.integer  "number"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "ingredients", :force => true do |t|
+    t.string   "name"
+    t.integer  "weight"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -53,6 +60,20 @@ ActiveRecord::Schema.define(:version => 20130520230835) do
     t.integer  "limit"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "recipe_ingredients", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
+    t.integer  "amount"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "recipes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
