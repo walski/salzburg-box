@@ -1,3 +1,6 @@
+require 'net/http'
+require 'uri'
+
 require 'spec_helper'
 
 describe "The Scaling Middleware" do
@@ -13,8 +16,13 @@ describe "The Scaling Middleware" do
     lines.length.should eq 3
     lines.each do |line|
       time = line.to_f
-      time.should > 0
+      time.should > 0.0
       time.should < 0.5
     end
   end
+end
+
+def get url
+  uri = URI.parse("http://localhost:3000"+url)
+  Net::HTTP.get_response(uri)
 end
