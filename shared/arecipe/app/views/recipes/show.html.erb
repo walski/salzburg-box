@@ -1,0 +1,44 @@
+<h3><%= @recipe.name %></h3>
+<h4>by <%= link_to @recipe.user.name, @recipe.user %></h4>
+<p>
+  <%= recipe_big_photo(@recipe) %>
+</p>
+
+<h4>Summary:</h4>
+
+<ul>
+  <li>Price: <%= number_to_currency(@recipe.price) %></li>
+  <li>Duration: <%= @recipe.duration %> min</li>
+</ul>
+
+<h4>Ingredients:</h4>
+<ul>
+  <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
+    <li><%= recipe_ingredient.amount %>  <%= recipe_ingredient.ingredient.unit %> <%= recipe_ingredient.ingredient.name %> (<%= number_to_currency(recipe_ingredient.amount * recipe_ingredient.ingredient.price) %>)
+  <% end %>
+</ul>
+
+<h4>Instructions:</h4>
+
+<ol>
+  <% @recipe.preparation_steps.each do |step| %>
+    <li><%=step.duration%> min: <%= step.instructions %></li>
+  <% end %>
+</ol>
+
+<% if current_user && !current_user.liked_recipes.include?(@recipe) %>
+  <%= link_to "Uhhh, I love that!", recipe_likes_path(@recipe), :method => :post %>
+<% end %>
+
+<h4>Loved by</h4>
+
+<ul>
+<% @recipe.likes.each do |like| %>
+  <li>
+    <%= link_to like.user.name, like.user %>
+    <% if like.user == current_user %>
+      - <%= link_to "Oh, I don't like that anymore", recipe_like_path(@recipe, like), :method => :delete %>
+    <% end %>
+  </li>
+<% end %>
+</ul>

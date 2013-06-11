@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="span12">
+    <h2>Hot recipes</h2>
+  </div>
+
+  <%= render :partial => 'big_recipe', :collection => @hot_recipes %>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <h2>Food the way you want it</h2>
+  </div>
+  <div class="span4">
+    <h3>Cheap</h3>
+    <%= render :partial => 'small_recipe', :collection => @cheap_recipes  %>
+  </div>
+
+  <div class="span4">
+    <h3>Quick</h3>
+    <%= render :partial => 'small_recipe', :collection => @quick_recipes  %>
+  </div>
+
+  <div class="span4">
+    <h3>Loved</h3>
+    <%= render :partial => 'small_recipe', :collection => @loved_recipes  %>
+  </div>
+
+  <% if current_user %>
+    <div class="span12">
+      <h2>Food Inspired By Me - Loved By Others</h2>
+    </div>
+
+    <%= render :partial => 'big_recipe', :collection => @loved_recipes_from_me %>
+  <% end %>
+</div>
