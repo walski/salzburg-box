@@ -1,0 +1,14 @@
+<div class="small-recipe span4">
+  <%= link_to small_recipe, :class => 'photo', :style => "background-image:url(/recipes/small/#{small_recipe.image}.jpg);" do %>
+  <% end %>
+  <div class="description">
+    <p>
+      <%= link_to small_recipe.name, small_recipe %>
+    </p>
+    <p>
+      <%= small_recipe.duration %> min |
+      <%= number_to_currency(small_recipe.price) %> |
+      <%= small_recipe.likes.count %> ❤
+    </p>
+  </div>
+</div>
