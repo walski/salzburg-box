@@ -34,4 +34,7 @@ Selfstarter::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Turns caching on
+  # config.action_controller.perform_caching = true
 end

@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="span12">
+    <h3><%= @user.name %> <small><%= @user.email %></small></h3>
+  </div>
+
+  <div class="span4">
+    <h4>Food I Cook</h4>
+    <%= render :partial => '/home/small_recipe', :collection => @user.recipes  %>
+  </div>
+
+  <div class="span4">
+    <h4>Food I Love</h4>
+    <%= render :partial => '/home/small_recipe', :collection => @user.liked_recipes  %>
+  </div>
+</div>
