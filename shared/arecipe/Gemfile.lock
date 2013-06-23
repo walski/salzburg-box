@@ -69,6 +69,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcached (1.6.1)
     mime-types (1.23)
     multi_json (1.7.6)
     mysql2 (0.3.11)
@@ -155,6 +156,7 @@ DEPENDENCIES
   devise (>= 2.2.3)
   figaro (>= 0.6.3)
   jquery-rails
+  memcached
   mysql2
   quiet_assets (>= 1.0.2)
   rails (= 3.2.13)
