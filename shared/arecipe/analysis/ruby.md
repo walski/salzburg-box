@@ -22,6 +22,7 @@
 * Recipes: ~ 20.22 [#/sec]
 
 ### Neue Ergebnisse
+
 * Homepage: 4.41 [#/sec]
 * Users: ~ 5.24 [#/sec]
 * Recipes: ~ 26.68 [#/sec]
@@ -31,6 +32,12 @@
 * Improved front page requests per second by 2594%
 * Improved user page requests per second by 2620%
 * Improved page requests per second by 1976%
+
+## Tests mit Concurrency Level 3
+
+* Homepage: 5.16 [#/sec]
+* Users: ~ 5.6 [#/sec]
+* Recipes: ~ 28.04 [#/sec]
 
 ## Nächster Schritt
 
@@ -317,6 +324,283 @@
 	  99%    231
 	 100%    231 (longest request)	
 
+
+### Homepage: ab -n50 -c3 http://localhost:3000/
+
+	Server Software:        WEBrick/1.3.1
+	Server Hostname:        localhost
+	Server Port:            3000
+
+	Document Path:          /
+	Document Length:        6656 bytes
+
+	Concurrency Level:      3
+	Time taken for tests:   9.692 seconds
+	Complete requests:      50
+	Failed requests:        49
+	   (Connect: 0, Receive: 0, Length: 49, Exceptions: 0)
+	Write errors:           0
+	Total transferred:      368855 bytes
+	HTML transferred:       335155 bytes
+	Requests per second:    5.16 [#/sec] (mean)
+	Time per request:       581.546 [ms] (mean)
+	Time per request:       193.849 [ms] (mean, across all concurrent requests)
+	Transfer rate:          37.16 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   0.7      0       5
+	Processing:   310  568  49.9    568     727
+	Waiting:      310  566  50.1    567     722
+	Total:        315  569  49.5    568     728
+
+	Percentage of the requests served within a certain time (ms)
+	  50%    568
+	  66%    583
+	  75%    592
+	  80%    602
+	  90%    610
+	  95%    611
+	  98%    728
+	  99%    728
+	 100%    728 (longest request)
+
+
+### User 1: ab -n50 -c3 http://localhost:3000/users/50
+
+	Server Software:        WEBrick/1.3.1
+	Server Hostname:        localhost
+	Server Port:            3000
+
+	Document Path:          /users/50
+	Document Length:        7314 bytes
+
+	Concurrency Level:      3
+	Time taken for tests:   9.724 seconds
+	Complete requests:      50
+	Failed requests:        0
+	Write errors:           0
+	Total transferred:      399400 bytes
+	HTML transferred:       365700 bytes
+	Requests per second:    5.14 [#/sec] (mean)
+	Time per request:       583.442 [ms] (mean)
+	Time per request:       194.481 [ms] (mean, across all concurrent requests)
+	Transfer rate:          40.11 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   1.1      0       8
+	Processing:   397  572  41.5    576     781
+	Waiting:      396  570  41.1    574     776
+	Total:        397  572  42.2    576     788
+
+	Percentage of the requests served within a certain time (ms)
+	  50%    576
+	  66%    579
+	  75%    579
+	  80%    580
+	  90%    581
+	  95%    589
+	  98%    788
+	  99%    788
+	 100%    788 (longest request)
+
+### User 2: ab -n50 -c3 http://localhost:3000/users/43
+
+	Server Software:        WEBrick/1.3.1
+	Server Hostname:        localhost
+	Server Port:            3000
+
+	Document Path:          /users/43
+	Document Length:        8258 bytes
+
+	Concurrency Level:      3
+	Time taken for tests:   10.600 seconds
+	Complete requests:      50
+	Failed requests:        0
+	Write errors:           0
+	Total transferred:      446600 bytes
+	HTML transferred:       412900 bytes
+	Requests per second:    4.72 [#/sec] (mean)
+	Time per request:       635.976 [ms] (mean)
+	Time per request:       211.992 [ms] (mean, across all concurrent requests)
+	Transfer rate:          41.15 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   0.9      0       6
+	Processing:   258  623  59.9    632     663
+	Waiting:      257  621  59.9    631     662
+	Total:        264  623  59.1    632     663
+
+	Percentage of the requests served within a certain time (ms)
+	  50%    632
+	  66%    637
+	  75%    639
+	  80%    642
+	  90%    648
+	  95%    660
+	  98%    663
+	  99%    663
+	 100%    663 (longest request)
+
+### User 3: ab -n50 -c3 http://localhost:3000/users/41
+
+	Server Software:        WEBrick/1.3.1
+	Server Hostname:        localhost
+	Server Port:            3000
+
+	Document Path:          /users/41
+	Document Length:        6132 bytes
+
+	Concurrency Level:      3
+	Time taken for tests:   7.206 seconds
+	Complete requests:      50
+	Failed requests:        0
+	Write errors:           0
+	Total transferred:      340300 bytes
+	HTML transferred:       306600 bytes
+	Requests per second:    6.94 [#/sec] (mean)
+	Time per request:       432.356 [ms] (mean)
+	Time per request:       144.119 [ms] (mean, across all concurrent requests)
+	Transfer rate:          46.12 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   0.8      0       6
+	Processing:   158  424  48.0    433     465
+	Waiting:      158  421  47.8    429     464
+	Total:        164  424  47.4    433     465
+
+	Percentage of the requests served within a certain time (ms)
+	  50%    433
+	  66%    447
+	  75%    449
+	  80%    450
+	  90%    458
+	  95%    463
+	  98%    465
+	  99%    465
+	 100%    465 (longest request)
+
+
+### Recipe 1: ab -n200 -c3 http://localhost:3000/recipes/2042
+
+	Server Software:        WEBrick/1.3.1
+	Server Hostname:        localhost
+	Server Port:            3000
+
+	Document Path:          /recipes/2042
+	Document Length:        2997 bytes
+
+	Concurrency Level:      3
+	Time taken for tests:   7.242 seconds
+	Complete requests:      200
+	Failed requests:        0
+	Write errors:           0
+	Total transferred:      734200 bytes
+	HTML transferred:       599400 bytes
+	Requests per second:    27.62 [#/sec] (mean)
+	Time per request:       108.633 [ms] (mean)
+	Time per request:       36.211 [ms] (mean, across all concurrent requests)
+	Transfer rate:          99.00 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   0.4      0       4
+	Processing:    94  108  21.8     99     257
+	Waiting:       91  106  21.9     98     257
+	Total:         95  108  22.1     99     261
+
+	Percentage of the requests served within a certain time (ms)
+	  50%     99
+	  66%    102
+	  75%    105
+	  80%    115
+	  90%    141
+	  95%    148
+	  98%    161
+	  99%    229
+	 100%    261 (longest request)
+
+
+### Recipe 2: ab -n200 -c3 http://localhost:3000/recipes/2082
+
+	Server Software:        WEBrick/1.3.1
+	Server Hostname:        localhost
+	Server Port:            3000
+
+	Document Path:          /recipes/2082
+	Document Length:        3542 bytes
+
+	Concurrency Level:      3
+	Time taken for tests:   6.830 seconds
+	Complete requests:      200
+	Failed requests:        0
+	Write errors:           0
+	Total transferred:      843200 bytes
+	HTML transferred:       708400 bytes
+	Requests per second:    29.28 [#/sec] (mean)
+	Time per request:       102.444 [ms] (mean)
+	Time per request:       34.148 [ms] (mean, across all concurrent requests)
+	Transfer rate:          120.57 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   0.3      0       4
+	Processing:    53  102  15.6     96     147
+	Waiting:       51  100  15.7     95     145
+	Total:         57  102  15.5     96     147
+
+	Percentage of the requests served within a certain time (ms)
+	  50%     96
+	  66%     97
+	  75%     99
+	  80%    102
+	  90%    137
+	  95%    140
+	  98%    144
+	  99%    145
+	 100%    147 (longest request)
+
+### Recipe 3: ab -n200 -c3 http://localhost:3000/recipes/2005
+
+	Server Software:        WEBrick/1.3.1
+	Server Hostname:        localhost
+	Server Port:            3000
+
+	Document Path:          /recipes/2005
+	Document Length:        3358 bytes
+
+	Concurrency Level:      3
+	Time taken for tests:   7.348 seconds
+	Complete requests:      200
+	Failed requests:        0
+	Write errors:           0
+	Total transferred:      806400 bytes
+	HTML transferred:       671600 bytes
+	Requests per second:    27.22 [#/sec] (mean)
+	Time per request:       110.217 [ms] (mean)
+	Time per request:       36.739 [ms] (mean, across all concurrent requests)
+	Transfer rate:          107.18 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   0.3      0       5
+	Processing:    65  109  16.0    103     154
+	Waiting:       61  108  15.9    101     153
+	Total:         69  110  15.9    103     154
+
+	Percentage of the requests served within a certain time (ms)
+	  50%    103
+	  66%    105
+	  75%    107
+	  80%    110
+	  90%    144
+	  95%    148
+	  98%    152
+	  99%    152
+	 100%    154 (longest request)
 
 
      
