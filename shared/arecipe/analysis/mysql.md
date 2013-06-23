@@ -1,4 +1,4 @@
-# 3. Applikation im Production Mode starten
+# 3. Datenbank auf mySQL2 umstellen
 
 ## Testumgebung
 

@@ -1,4 +1,4 @@
-# 4. Applikation im Production Mode starten
+# 4. Auf Ruby Version 1.9.3 umstellen
 
 ## Testumgebung
 

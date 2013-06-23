@@ -1,4 +1,4 @@
-# 4. Applikation im Production Mode starten
+# 4. Applikation Server auf Unicorn umstellen
 
 ## Testumgebung
 
