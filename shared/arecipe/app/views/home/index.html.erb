@@ -2,8 +2,9 @@
   <div class="span12">
     <h2>Hot recipes</h2>
   </div>
-
-  <%= render :partial => 'big_recipe', :collection => @hot_recipes %>
+  <% unless @hot_receipes.nil? %>
+    <%= render :partial => 'big_recipe', :collection => @hot_recipes %>
+  <% end %>
 </div>
 
 <div class="row">

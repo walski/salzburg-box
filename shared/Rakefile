@@ -1,0 +1,57 @@
+desc "kill running rails servers"
+task :cleanup, :process_name do |t, args|
+  Dir['/proc/[0-9]*/cmdline'].each do |p|
+    if File.read(p).include?("rails") || File.read(p).include?("unicorn") || File.read(p).include?("thin")
+      Process.kill("SIGKILL", p.split('/')[2].to_i )
+    end
+  end
+end
+
+namespace :bench do
+
+  Dir.chdir("/shared/arecipe")
+  args = ENV['ARGS'].split(",") 
+  cookie = ""
+  path = "_"
+  len = (args.length == 4) ? "1" : "0";
+  if args.length > 3
+    cookie = File.read('/shared/cookie.txt')
+  end
+  if (args[1] != "")
+    p = args[1].split("/")
+    path += p[0] + p[1] + "_"
+  end
+
+  task :webrick do |t|
+    if(cookie != "")
+      exec "ab -n #{args[0]} -g analysis/webrick#{ path + args[2] +'_'+ len +'_'+ args[0]}.dat -C #{cookie} http://localhost:3000/#{args[1]}"
+    else
+      exec "ab -n #{args[0]} -g analysis/webrick#{ path + args[2] +'_'+ len +'_'+ args[0]}.dat http://localhost:3000/#{args[1]}"
+    end
+  end
+
+  task :thin do |t|
+    if(cookie != "")
+      exec "ab -n #{args[0]} -g analysis/thin#{ path + args[2] +'_'+ len +'_'+ args[0]}.dat -C #{cookie} http://localhost:3000/#{args[1]}"
+    else
+      exec "ab -n #{args[0]} -g analysis/thin#{ path + args[2] +'_'+ len +'_'+ args[0]}.dat http://localhost:3000/#{args[1]}"
+    end
+  end
+
+  task :unicorn do |t|
+    if(cookie != "")
+      exec "ab -n #{args[0]} -g analysis/unicorn#{ path + args[2] +'_'+ len +'_'+ args[0]}.dat -C #{cookie} http://localhost:3000/#{args[1]}"
+    else
+      exec "ab -n #{args[0]} -g analysis/unicorn#{ path + args[2] +'_'+ len +'_'+ args[0]}.dat http://localhost:3000/#{args[1]}"
+    end
+    #bundle exec unicorn -p 3000 -C 
+  end
+
+end
+
+namespace :gnu do
+  task :plot do
+    Dir.chdir("/shared/arecipe")
+    exec "gnuplot /shared/gnuplot/line"
+  end
+end

@@ -4,4 +4,8 @@ set xlabel "request"
 set ylabel "response time (ms)"
 set term pngcairo
 set output "/shared/output.png"
-plot "/tmp/ab.dat" using 9 with points title "test #1"
+
+plot "/tmp/simple10.dat" using 9 with points title "webrick10 #1" \
+	"/tmp/thin10.dat" using 9 with points title "thin10 #1" \
+	"/tmp/unicorn10.dat" using 9 with points title "unicorn10 #1" 
+
