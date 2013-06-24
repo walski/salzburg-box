@@ -1,0 +1,44 @@
+vagrant@rails-starter-box:/shared/arecipe$ ab -c 1 -n10 http://localhost:3000/recipes/2024
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /recipes/2024
+Document Length:        2381 bytes
+
+Concurrency Level:      1
+Time taken for tests:   0.567 seconds
+Complete requests:      10
+Failed requests:        0
+Write errors:           0
+Total transferred:      29730 bytes
+HTML transferred:       23810 bytes
+Requests per second:    17.63 [#/sec] (mean)
+Time per request:       56.718 [ms] (mean)
+Time per request:       56.718 [ms] (mean, across all concurrent requests)
+Transfer rate:          51.19 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:    33   57  37.0     35     133
+Waiting:       32   56  36.9     35     133
+Total:         33   57  37.0     35     133
+
+Percentage of the requests served within a certain time (ms)
+  50%     35
+  66%     37
+  75%     94
+  80%     97
+  90%    133
+  95%    133
+  98%    133
+  99%    133
+ 100%    133 (longest request)
