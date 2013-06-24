@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+
+  caches_action :show, :expires_in => 10.minutes
   def show
     @user = User.find(params[:id])
   end

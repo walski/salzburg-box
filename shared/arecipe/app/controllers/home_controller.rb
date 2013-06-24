@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+
+  caches_action :index, :expires_in => 10.minutes
+
   def index
     @hot_recipes   = 3.times.map {Recipe.random}
 

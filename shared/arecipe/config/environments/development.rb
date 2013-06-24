@@ -1,4 +1,6 @@
 Arecipe::Application.configure do
+
+  require "dalli"
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -11,7 +13,7 @@ Arecipe::Application.configure do
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
 
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
@@ -33,6 +35,7 @@ Arecipe::Application.configure do
 
 
 
+  config.cache_store = :dalli_store
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
