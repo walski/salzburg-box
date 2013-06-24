@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'unicorn'
 
 gem 'cache_digests'
+gem 'dalli'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

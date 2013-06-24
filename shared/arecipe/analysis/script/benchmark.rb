@@ -9,7 +9,7 @@ autobench_params = {
   "--rate_step" =>  20,
   "--high_rate" => 200,
   "--num_call"  =>   1,
-  "--timeout"   =>  30
+  "--timeout"   =>  10
 }
 
 tests = {
@@ -51,7 +51,7 @@ tests = {
 }
 
 def results_path(test_name, i=0)
-  "/shared/arecipe/analysis/raw_data/phase_04/#{"%02d" % i}_#{test_name}.csv"
+  "/shared/arecipe/analysis/raw_data/phase_05/#{"%02d" % i}_#{test_name}.csv"
 end
 
 

@@ -296,6 +296,34 @@
 </div>
 
 <p>Als nächstes möchte ich noch probieren, ob ich die Performance der Startseite weiter verbessern kann, indem ich ein anderes Cache-Backend verwende (Rails benutzt standardmäßig das Dateisystem). Meine Beobachtung zeigt jedoch, dass der Arbeitsspeicher der virtuellen Maschine bereits stark ausgelastet ist, und es ist fraglich ob memcached noch genug Ressourcen zur Verfügung stehen um einen positiven Einfluss zu haben.</p>
+
+<h2>Phase 5</h2>
+
+<p>Der Einsatz von memchached hatte absolut positive Auswirkungen:</p>
+
+<p><strong>Home ohne eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_05/01_home_average_reply_rate.svg"><img src="raw_data/phase_05/01_home_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_05/01_home_average_response_time.svg"><img src="raw_data/phase_05/01_home_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_05/01_home_errors.svg"><img src="raw_data/phase_05/01_home_errors.svg" class="img-polaroid span3"></a>
+</div>
+
+<p><strong>Home mit eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_05/02_home_with_auth_average_reply_rate.svg"><img src="raw_data/phase_05/02_home_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_05/02_home_with_auth_average_response_time.svg"><img src="raw_data/phase_05/02_home_with_auth_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_05/02_home_with_auth_errors.svg"><img src="raw_data/phase_05/02_home_with_auth_errors.svg" class="img-polaroid span3"></a>
+</div>
+
+<p>Meine anfänglichen Befürchtungen, dass nicht mehr genug RAM für memcached zur Verfügung stehen könnte, haben sich zum Glück nicht bewahrheitet. Der Einsatz von memcached verlief sehr erfolgreich:</p>
+
+<ul>
+	<li>Für nicht eingelogte User hat sich die Antwortzeit je nach Concurrency 3 bis 38 mal verschnellert.</li>
+	<li>Für eingelogte User wurde die Seite immerhin 1,3 bis 1,4 Mal schneller.</li>
+</ul>
+
 </div><!-- /.container -->
 
 <script type="text/javascript">
