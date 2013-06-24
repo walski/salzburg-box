@@ -1,9 +1,11 @@
 set ylabel "request"
 set xlabel "response time (ms)"
 set term pngcairo
-set output "/shared/output.png"
+set output "/shared/output_histogram.png"
 
 binwidth=20
 bin(x,width)=width*floor(x/width)
 
-plot "/tmp/ab.dat" using (bin($9,binwidth)):(1.0) smooth freq with boxes
+plot "/shared/arecipe/analysis/webrick10.dat" using (bin($9,binwidth)):(1.0) smooth freq with boxes title "webrick #1", \
+	"/shared/arecipe/analysis/thin10.dat" using (bin($9,binwidth)):(1.0) smooth freq with boxes title "thin #1", \
+	"/shared/arecipe/analysis/unicorn10.dat" using (bin($9,binwidth)):(1.0) smooth freq with boxes title "unicorn #1"

@@ -1,7 +1,15 @@
-set title "ab result"
+set title "ab overview result"
 set grid y
 set xlabel "request"
 set ylabel "response time (ms)"
 set term pngcairo
-set output "/shared/output.png"
-plot "/tmp/ab.dat" using 9 smooth sbezier with line title "test #1"
+set output "/shared/arecipe/analysis/basic_home.png"
+
+
+
+plot "/shared/arecipe/analysis/thin_ruby1.8.7_0_10.dat" using 9 smooth sbezier with line title "thin_ruby1.8.7_0_10.dat" , \
+      "/shared/arecipe/analysis/thin_ree_0_10.dat" using 9 smooth sbezier with line title "thin_ree_0_10.dat" , \
+      "/shared/arecipe/analysis/thin_ruby1.9.3_0_10.dat" using 9 smooth sbezier with line title "thin_ruby1.9.3_0_10.dat" , \
+      "/shared/arecipe/analysis/unicorn_ruby1.8.7_0_10.dat" using 9 smooth sbezier with line title "unicorn_ruby1.8.7_0_10.dat" , \
+      "/shared/arecipe/analysis/unicorn_ree_0_10.dat" using 9 smooth sbezier with line title "unicorn_ree_0_10.dat" , \
+      "/shared/arecipe/analysis/unicorn_ruby1.9.3_0_10.dat" using 9 smooth sbezier with line title "unicorn_ruby1.9.3_0_10.dat"
