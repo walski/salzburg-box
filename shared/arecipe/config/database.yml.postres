@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: UTF-8
+  database: arecipe_development
+  pool: 5
+  username: postgres
+  password: postgres
+
+test:
+  adapter: postgresql
+  encoding: UTF-8
+  database: arecipe_test
+  pool: 5
+  username: postgres
+  password: postgres
+
+production:
+  adapter: postgresql
+  encoding: UTF-8
+  database: arecipe_production
+  pool: 5
+  username: postgres
+  password: postgres
