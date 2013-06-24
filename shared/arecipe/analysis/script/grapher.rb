@@ -23,6 +23,7 @@ class ResultGrapher
   def initialize(result_file)
     @result_file = result_file
     @stats = {
+      :request_rate => [],
       :attempted_request_rate => [], 
       :average_reply_rate => [], 
       :average_response_time => [], 
@@ -42,6 +43,7 @@ class ResultGrapher
       next if row[0] =~ /^\D+/
 
       @stats[:attempted_request_rate] << row[0].to_f
+      @stats[:request_rate] << row[1].to_f
       @stats[:average_reply_rate] << row[4].to_f
       @stats[:average_response_time] << row[7].to_f
       if row[4].to_f == 0 
@@ -61,7 +63,7 @@ class ResultGrapher
     g.title = "Average Reply Rate (Responses per Second)"
     g.renderer = Scruffy::Renderers::Standard.new
 
-    g.add :area, "Attempted Request Rate", @stats[:attempted_request_rate]
+    # g.add :area, "Attempted Request Rate", @stats[:attempted_request_rate]
     g.add :line, "Average Reply Rate", @stats[:average_reply_rate]
 
     g.point_markers = @stats[:attempted_request_rate]
