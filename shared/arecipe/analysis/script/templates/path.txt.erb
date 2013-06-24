@@ -1,0 +1,5 @@
+<% if @with_authentication %>
+/users/sign_in    method=POST  contents='user[email]=christoph@edthofer.at&user[password]=password'
+<% end %>
+
+<%= @path %>
