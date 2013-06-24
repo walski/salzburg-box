@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>Analysis</title>
+	<title>Analyse &mdash; Christoph Edthofer</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="bootstrap/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 	<script type="text/javascript" src="bootstrap/js/jquery.min.js" charset="utf-8"></script>
@@ -11,9 +11,9 @@
 </head>
 <body>
 <div class="container">
-<h1>Analysis</h1>
+<h1>Analyse</h1>
 
-<h2>Einleitung</h2>
+<p><em>Christoph Edthofer</em></p>
 
 <h2>Phase 1</h2>
 
@@ -323,6 +323,16 @@
 	<li>Für nicht eingelogte User hat sich die Antwortzeit je nach Concurrency 3 bis 38 mal verschnellert.</li>
 	<li>Für eingelogte User wurde die Seite immerhin 1,3 bis 1,4 Mal schneller.</li>
 </ul>
+
+<h2>Fazit &amp; Ausblick</h2>
+
+<p>Durch mehrere Iterationsphasen hindurch konnte ich die Performance und Stabilität steigern. Bei manchen Schritten (z.B. Einsatz von MySQL) war von vornherein klar, dass sie zu besseren Ergebnissen führen, bei anderen (z.B. Einsatz von memcached) kam der beachtliche Leistungszuwachs sehr überraschend.</p>
+
+<p>Die Arbeit an diesem Projekt war recht hypothetisch. Sehr viel Zeit ging mit dem Überlegen und Entwickeln eines Messvorganges, der außerdem vergleichbare Ergebnisse liefert. Die gewonnenen Zahlen sind daher sehr hypothetisch und spiegeln vermutlich nicht das an Last wieder, was durch echte Nutzer und deren Verhaltensmuster produziert würde. In einem "echten" Projekt würde ich vermutlich ein fertiges Tool wie NewRelic verwenden um tatsächliche Flaschenhälse zu identifizieren und diese gezielt zu bekämpfen. Außerdem würde ich die App von vornherein im Hinblick auf ihre Performance und Caching entwickeln.</p>
+
+<p>Mehr Arbeit würde ich vermutlich in die Verbesserung des Messmechanismus stecken: So könnte man Beispielsweise mehrere Messpunkte (auf Rack-Ebene, von außen mit unterschiedlichen Benchmark-Tools, etc.) und diese in einen Kennwert zusammenrechnen. Ein weiteres Experimentieren mit der App hat gezeigt, dass z.B. <code>autobench</code> für die Home-Seite ohne eingeloggten User ~30 Req/sec misst, <code>ab</code> hingegen 59 Req/sec.</p>
+
+<p>Außerdem kann ich sagen, dass die virtuelle Maschine vielleicht zu unterdimensioniert war, um realistische und wiederholbare Messergebnisse zu produzieren. In den anfänglichen Tests konnte ich durch das mehrmalige wiederholen der selben Tests stark widersprüchliche Ergebnisse produzieren und so einen Erfolg meiner Maßnahmen nicht genau einschätzen.</p>
 
 </div><!-- /.container -->
 
