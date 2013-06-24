@@ -59,7 +59,6 @@ class ResultGrapher
     g.title = "Average Reply Rate (Responses per Second)"
     g.renderer = Scruffy::Renderers::Standard.new
 
-    g.add :area, "Attempted Request Rate", @stats[:attempted_request_rate]
     g.add :line, "Average Reply Rate", @stats[:average_reply_rate]
 
     g.point_markers = @stats[:attempted_request_rate]
