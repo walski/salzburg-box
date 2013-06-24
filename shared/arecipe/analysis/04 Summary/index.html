@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>04 Summary</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <h1>04 Summary</h1>
+        <h3>von Thomas Esterer, MMT-M 2012</h3>
+        <br/>
+        <h4>Zusammenfassung</h4>
+        <p>
+            Die Analyse der Applikation zeigte zu Beginn eine sehr schlechte Performance. Sie erzeugte sehr viele Timeout-Error und benötigte extreme Ladezeiten bei den Datenbank-Anfragen. Durch die Umstellung auf MySQL konnte ein erheblicher Performance-Gewinn erzielt werden. Die nächste Iteration war der (logische) Wechsel des Webservers. WebRick wird für produktive Zwecke nicht empfohlen, daher stellte ich auf Unicorn um. Die Wahl auf diesen Server fiel durch bereits durchgeführte Tests während des Workshops mit Dir.<br/><br/>
+            <u>Was könnte man in Zukunft noch verbessern:</u><br/>
+            <ul>
+                <li>Weitere Optimierungen im Bereich der Datenbank müssen durchgeführt werden, um die Applikation zu verschnellern (zB Eager Loading).</li>
+                <li>Caching in allen Variationen (Rezeptseiten, Userseiten, ...) auf Rails-Seite</li>
+                <li>Caching in allen Variationen (Rezeptseiten, Userseiten, ...) auf Server-Seite</li>
+            </ul>
+            <br/>
+            <u>Anmerkungen zur Arbeit:</u><br/>
+            <ul>
+                <li>Man kann die Zahlen zwischen Ausgeloggt und Eingeloggt nicht wirklich vergleichen. Beim zweiteren wird der Login + die jeweilige Seite gemessen. Dadurch entstehen höhere Response Times. Mir war jedoch kein anderer Weg zur Lösung dieser Thematik bekannt.</li>
+                <li>Bei der initialen Zielsetzung musste ich meiner Kreativität freien Lauf lassen. Da dies das erste Mess + Verbesserungs Projekt war, hatte ich vorher keine Erfahrungen. Die Erreichung des Zieles kam früher als gedacht. Ich schätzte das mehr Iterationen notwenig wären.</li>
+                <li>Ich bin mir auch gar nicht sicher wie objektiv die Benchmark-Testungen sind. Manche Ergebnisse kann ich mir selbst nicht erklären. Hier fehlt mir leider das Hintergrundwissen um genaue Aussagen treffen zu können. Auch mehrere Durchläufe derselben Tests brachten zum Teil grobe Unterschiede bei den Ergebnissen.</li>
+            </ul>
+        </p>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

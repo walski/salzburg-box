@@ -6,7 +6,9 @@
       <tr><th>Recipe</th><th>Ingredient's Weight</th></tr>
     </thead>
     <tbody>
-      <%= render @recipes %>
+      <% cache do %>
+        <%= render @recipes %>
+      <% end %>
     </tbody>
   </table>
 </div>

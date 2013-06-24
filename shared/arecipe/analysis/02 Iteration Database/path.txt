@@ -1,0 +1,2 @@
+/users/sign_in method=POST  contents='user%5Bemail%5D=a%40b.com&user%5Bpassword%5D=1234567890'
+/recipes/2016
