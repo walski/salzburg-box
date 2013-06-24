@@ -1,0 +1,84 @@
+ab -n 100 -c 10 http://localhost:3000/scaling/numbercrunching
+ruby 1.9.3p429 (2013-05-15 revision 40747) [i686-linux]
+thin
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/numbercrunching
+Document Length:        2127 bytes
+
+Concurrency Level:      10
+Time taken for tests:   201.813 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      246100 bytes
+HTML transferred:       212700 bytes
+Requests per second:    0.50 [#/sec] (mean)
+Time per request:       20181.310 [ms] (mean)
+Time per request:       2018.131 [ms] (mean, across all concurrent requests)
+Transfer rate:          1.19 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.4      0       3
+Processing: 18011 20141 557.5  20118   22694
+Waiting:     1996 16550 4354.6  18012   20669
+Total:      18011 20141 557.5  20118   22695
+
+Percentage of the requests served within a certain time (ms)
+  50%  20118
+  66%  20168
+  75%  20195
+  80%  20464
+  90%  20669
+  95%  20670
+  98%  22268
+  99%  22695
+ 100%  22695 (longest request)
+
+------------------------------------------------------------------------------------------------------------------------------
+
+ab -n 100 -c 10 http://localhost:3000/scaling/numbercrunching
+ruby 1.8.7 (2012-02-08 patchlevel 358) [i686-linux]
+thin
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/numbercrunching
+Document Length:        17715 bytes
+
+Concurrency Level:      10
+Time taken for tests:   21.067 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Non-2xx responses:      100
+Total transferred:      1797100 bytes
+HTML transferred:       1771500 bytes
+Requests per second:    4.75 [#/sec] (mean)
+Time per request:       2106.736 [ms] (mean)
+Time per request:       210.674 [ms] (mean, across all concurrent requests)
+Transfer rate:          83.30 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0       2
+Processing:  1124 2097 290.8   2056    3833
+Waiting:      196 1747 524.3   1884    2581
+Total:       1125 2097 291.0   2056    3833
+
+Percentage of the requests served within a certain time (ms)
+  50%   2056
+  66%   2092
+  75%   2114
+  80%   2117
+  90%   2584
+  95%   2584
+  98%   2585
+  99%   3833
+ 100%   3833 (longest request)

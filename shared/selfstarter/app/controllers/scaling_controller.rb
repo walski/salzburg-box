@@ -50,7 +50,7 @@ class ScalingController < ApplicationController
   end
 
   def recipes
-    @recipes = Recipe.all
+    @recipes = Rails.cache.fetch('all-recipes-and-ingredients') { Recipe.includes(:recipe_ingredients).all }
   end
 
   protected

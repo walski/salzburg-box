@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>01 Analyse</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <h1>01 Analyse der Applikation</h1>
+        <h3>von Thomas Esterer, MMT-M 2012</h3>
+        <br/>
+        <h4>Testsetup</h4>
+        <p>
+            <ul>
+                <li>WEBrick 1.3.1 Server</li>
+                <li>ruby 1.8.7</li>
+                <li>SQLite</li>
+                <li>Development Enviroment</li>
+            </ul>
+        </p>
+        <h4>Benchmarking Tool</h4>
+        <p>
+            Autobench in Verbindung mit httperf.<br/><br/>
+
+            <u>Folgende Variablen wurden gewählt:</u><br/>
+            # low_rate, high_rate, rate_step<br/>
+            # The ‘rate’ is the number of number of connections to open per second.<br/>
+            # A series of tests will be conducted, starting at low rate,<br/>
+            # increasing by rate step, and finishing at high_rate.<br/>
+            <ul>
+                <li>low_rate = 20</li>
+                <li>high_rate = 200</li>
+                <li>rate_step = 20</li>
+            </ul>
+            <br/>
+            # num_conn, num_call<br/>
+            # num_conn is the total number of connections to make during a test<br/>
+            # num_call is the number of requests per connection<br/>
+            # The product of num_call and rate is the the approximate number of<br/>
+            # requests per second that will be attempted.<br/>
+            <ul>
+                <li>num_conn = 10</li>
+                <li>num_call = 1</li>
+            </ul>
+            <br/>
+
+            <u>Folgender Befehl wurde ausgeführt:</u><br/>
+            autobench --single_host --host1 localhost --port1 3000 --uri1 / --num_conn 10 --low_rate 20 --rate_step 20 --high_rate 200 --num_call 1 --timeout 50 --file logged_out/front_page.tsv
+        </p>
+        <h4>Durchgeführte Tests</h4>
+        <p>
+            <ul>
+                <li>Front Page /</li>
+                <li>User Page Many Recipes /users/43</li>
+                <li>User Page Less Recipes /users/51</li>
+                <li>Recipe Page Many Ingredients /recipes/2013</li>
+                <li>Recipe Page Less Ingredients /recipes/2016</li>
+            </ul>
+            <small><i>(Jeweils eingeloggt – neuer eigener User – und ausgeloggt)</i></small>
+        </p>
+        <h4>Zielsetzung</h4>
+        <p>
+            <b>Ausgangssituation</b>: Die Front Page (/) bietet im ausgeloggten Zustand eine hohe Fehlerrate und kann nur hin und wieder mit einer durchschnittlichen Zeit von 25 Sekunden antworten.<br/> 
+            <b>Ziel:</b> Die Front Page (/) sollte im ausgeloggten Zustand alle Requests bedienen können, und eine durchschnittliche Antwortzeit von weniger als 50% der aktuellen 25 Sekunden (12,5 Sekunden) bieten.<br/>
+        </p>
+        <h4>Resultate grafisch</h4>
+        <p>
+            <small><i>Die Grafiken wurden mithilfe des autobench_grapher (inkl. eigener Adaptierungen) erstellt (<a href="https://raw.github.com/brandonparsons/performance_tests/master/graphing/autobench_grapher.rb">https://raw.github.com/brandonparsons/performance_tests/master/graphing/autobench_grapher.rb</a>).</i></small>
+            <br/><br/>
+            <b>Logged Out - Front Page</b><br/>
+            <img src="logged_out/front_page_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_out/front_page_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_out/front_page_errors.svg" width="50%"/><br/><br/>
+            
+            <br/><br/>
+            <b>Logged Out - User Page Many Recipes</b><br/>
+            <img src="logged_out/user_page_many_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_out/user_page_many_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_out/user_page_many_errors.svg" width="50%"/><br/><br/>
+            
+            <br/><br/>
+            <b>Logged Out - User Page Less Recipes</b><br/>
+            <img src="logged_out/user_page_less_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_out/user_page_less_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_out/user_page_less_errors.svg" width="50%"/><br/><br/> 
+            
+            <br/><br/>
+            <b>Logged Out - Recipe Page Many Ingredients</b><br/>
+            <img src="logged_out/recipes_page_many_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_out/recipes_page_many_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_out/recipes_page_many_errors.svg" width="50%"/><br/><br/> 
+            
+            <br/><br/>
+            <b>Logged Out - Recipe Page Less Ingredients</b><br/>
+            <img src="logged_out/recipes_page_less_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_out/recipes_page_less_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_out/recipes_page_less_errors.svg" width="50%"/><br/><br/> 
+            
+            <br/><br/>
+            <b>Logged In - Front Page</b><br/>
+            <img src="logged_in_a/front_page_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/front_page_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/front_page_errors.svg" width="50%"/><br/><br/>
+            
+            <br/><br/>
+            <b>Logged In - User Page Many Recipes</b><br/>
+            <img src="logged_in_a/user_page_many_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/user_page_many_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/user_page_many_errors.svg" width="50%"/><br/><br/>
+            
+            <br/><br/>
+            <b>Logged In - User Page Less Recipes</b><br/>
+            <img src="logged_in_a/user_page_less_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/user_page_less_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/user_page_less_errors.svg" width="50%"/><br/><br/> 
+            
+            <br/><br/>
+            <b>Logged In - Recipe Page Many Ingredients</b><br/>
+            <img src="logged_in_a/recipes_page_many_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/recipes_page_many_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/recipes_page_many_errors.svg" width="50%"/><br/><br/> 
+            
+            <br/><br/>
+            <b>Logged In - Recipe Page Less Ingredients</b><br/>
+            <img src="logged_in_a/recipes_page_less_average_reply_rate.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/recipes_page_less_average_response_time.svg" width="50%"/><br/><br/>
+            <img src="logged_in_a/recipes_page_less_errors.svg" width="50%"/><br/><br/> 
+        </p>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

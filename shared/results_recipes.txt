@@ -1,0 +1,202 @@
+ohne Cache
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/recipes
+Document Length:        7087 bytes
+
+Concurrency Level:      10
+Time taken for tests:   186.036 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      747800 bytes
+HTML transferred:       708700 bytes
+Requests per second:    0.54 [#/sec] (mean)
+Time per request:       18603.569 [ms] (mean)
+Time per request:       1860.357 [ms] (mean, across all concurrent requests)
+Transfer rate:          3.93 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    3   6.6      1      27
+Processing:  1914 18203 2991.7  18778   20680
+Waiting:     1776 17675 3668.3  18460   20365
+Total:       1914 18206 2993.4  18781   20681
+
+Percentage of the requests served within a certain time (ms)
+  50%  18781
+  66%  19338
+  75%  19344
+  80%  19360
+  90%  20393
+  95%  20681
+  98%  20681
+  99%  20681
+ 100%  20681 (longest request)
+
+-----------------------------------------------------------------------------------------------------------
+
+mit Cache (aber mehrere statements)
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/recipes
+Document Length:        7087 bytes
+
+Concurrency Level:      10
+Time taken for tests:   180.633 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      747800 bytes
+HTML transferred:       708700 bytes
+Requests per second:    0.55 [#/sec] (mean)
+Time per request:       18063.308 [ms] (mean)
+Time per request:       1806.331 [ms] (mean, across all concurrent requests)
+Transfer rate:          4.04 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.7      0       7
+Processing:  5223 17476 4292.1  17890   26294
+Waiting:     5221 14724 3505.2  15729   18920
+Total:       5223 17476 4292.2  17890   26295
+
+Percentage of the requests served within a certain time (ms)
+  50%  17890
+  66%  18041
+  75%  19240
+  80%  21647
+  90%  22467
+  95%  25469
+  98%  26294
+  99%  26295
+ 100%  26295 (longest request)
+
+-----------------------------------------------------------------------------------------------------------
+
+mit Cache (ein statement)
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/recipes
+Document Length:        7087 bytes
+
+Concurrency Level:      10
+Time taken for tests:   136.667 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      747800 bytes
+HTML transferred:       708700 bytes
+Requests per second:    0.73 [#/sec] (mean)
+Time per request:       13666.681 [ms] (mean)
+Time per request:       1366.668 [ms] (mean, across all concurrent requests)
+Transfer rate:          5.34 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   1.9      0       8
+Processing:  3079 13457 3324.5  13627   25016
+Waiting:     1198 12097 3267.5  13462   15429
+Total:       3079 13458 3324.6  13628   25016
+
+Percentage of the requests served within a certain time (ms)
+  50%  13628
+  66%  13973
+  75%  14313
+  80%  14316
+  90%  16018
+  95%  16019
+  98%  25016
+  99%  25016
+ 100%  25016 (longest request)
+ 
+-----------------------------------------------------------------------------------------------------------
+
+mit Cache (ein statement & weight calculate)
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/recipes
+Document Length:        7087 bytes
+
+Concurrency Level:      10
+Time taken for tests:   72.084 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      747800 bytes
+HTML transferred:       708700 bytes
+Requests per second:    1.39 [#/sec] (mean)
+Time per request:       7208.350 [ms] (mean)
+Time per request:       720.835 [ms] (mean, across all concurrent requests)
+Transfer rate:          10.13 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   2.0      0      14
+Processing:   748 7144 819.2   7183    8118
+Waiting:      748 6889 827.3   7109    8117
+Total:        748 7145 820.0   7183    8132
+
+Percentage of the requests served within a certain time (ms)
+  50%   7183
+  66%   7196
+  75%   7214
+  80%   7289
+  90%   8120
+  95%   8120
+  98%   8120
+  99%   8132
+ 100%   8132 (longest request)
+ 
+-----------------------------------------------------------------------------------------------------------
+
+mit Cache (ein statement & weight calculate & fragment cache)
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/recipes
+Document Length:        7089 bytes
+
+Concurrency Level:      10
+Time taken for tests:   57.396 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      748000 bytes
+HTML transferred:       708900 bytes
+Requests per second:    1.74 [#/sec] (mean)
+Time per request:       5739.570 [ms] (mean)
+Time per request:       573.957 [ms] (mean, across all concurrent requests)
+Transfer rate:          12.73 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.9      0       9
+Processing:   602 5685 793.9   5619   10799
+Waiting:      536 5381 1261.7   5613    6569
+Total:        602 5685 794.1   5619   10799
+
+Percentage of the requests served within a certain time (ms)
+  50%   5619
+  66%   5622
+  75%   5672
+  80%   5731
+  90%   6572
+  95%   6572
+  98%   6579
+  99%  10799
+ 100%  10799 (longest request)
