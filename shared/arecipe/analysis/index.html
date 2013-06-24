@@ -27,17 +27,19 @@
 
 <p>Auf der y-Achse sind die durchschnittlichen Requests pro Sekunde aufgetragen. Wie sofort ersichtlich ist, gibt es bei den Webservern nur minimale Abweichungen, währen bei den Datenbank-Servern gravierende Unterschiede bestehen: SQLite ist weit abgeschlagen.</p>
 
-
+<!--
+================================================================================================================================================
+-->
 <h2>Phase 2</h2>
 
 <p>Im nächste Schritt habe ich mir ein Script geschrieben (in <code>analysis/script/benchmark.rb</code>), das den Benchmarking Prozess so gut wie möglich automatisieren soll. Ich habe mich dazu entschlossen folgende Seiten zu benchmarken:</p>
 
 <ul>
-	<li>Home (mit und ohne eingeloggtem User)</li>
-	<li>Ein User mit keinen Rezepten (mit und ohne eingeloggtem User)</li>
-	<li>Ein User mit vielen Rezepten (mit und ohne eingeloggtem User)</li>
-	<li>Ein Rezept mit keinen Zutaten (mit und ohne eingeloggtem User)</li>
-	<li>Ein Rezept mit vielen Zutaten (mit und ohne eingeloggtem User)</li>
+	<li>Home (mit und ohne eingelogtem User)</li>
+	<li>Ein User mit keinen Rezepten (mit und ohne eingelogtem User)</li>
+	<li>Ein User mit vielen Rezepten (mit und ohne eingelogtem User)</li>
+	<li>Ein Rezept mit keinen Zutaten (mit und ohne eingelogtem User)</li>
+	<li>Ein Rezept mit vielen Zutaten (mit und ohne eingelogtem User)</li>
 </ul>
 
 <p>Die Konfiguration für diesen Test schaut folgendermaßen aus:</p>
@@ -52,7 +54,7 @@
 <h3><a onclick="$('#phase_02_home').toggle()">Home</a></h3>
 
 <div id="phase_02_home" style="display:none">
-<p><strong>Ohne eingeloggtem User</strong></p>
+<p><strong>Ohne eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/02_home_average_reply_rate.svg"><img src="raw_data/phase_02/02_home_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -60,7 +62,7 @@
 	<a class="fancybox" href="raw_data/phase_02/02_home_errors.svg"><img src="raw_data/phase_02/02_home_errors.svg" class="img-polaroid span3"></a>
 </div>
 
-<p><strong>Mit eingeloggtem User</strong></p>
+<p><strong>Mit eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/01_home_with_auth_average_reply_rate.svg"><img src="raw_data/phase_02/01_home_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -72,7 +74,7 @@
 <h3><a onclick="$('#phase_02_user_light').toggle()">User mit wenigen Rezepten</a></h3>
 
 <div id="phase_02_user_light" style="display:none">
-<p><strong>Ohne eingeloggtem User</strong></p>
+<p><strong>Ohne eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/03_user_light_average_reply_rate.svg"><img src="raw_data/phase_02/03_user_light_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -80,7 +82,7 @@
 	<a class="fancybox" href="raw_data/phase_02/03_user_light_errors.svg"><img src="raw_data/phase_02/03_user_light_errors.svg" class="img-polaroid span3"></a>
 </div>
 
-<p><strong>Mit eingeloggtem User</strong></p>
+<p><strong>Mit eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/04_user_light_with_auth_average_reply_rate.svg"><img src="raw_data/phase_02/04_user_light_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -92,7 +94,7 @@
 <h3><a onclick="$('#phase_02_user_heavy').toggle()">User mit vielen Rezepten</a></h3>
 
 <div id="phase_02_user_heavy" style="display:none">
-<p><strong>Ohne eingeloggtem User</strong></p>
+<p><strong>Ohne eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/05_user_heavy_average_reply_rate.svg"><img src="raw_data/phase_02/05_user_heavy_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -100,7 +102,7 @@
 	<a class="fancybox" href="raw_data/phase_02/05_user_heavy_errors.svg"><img src="raw_data/phase_02/05_user_heavy_errors.svg" class="img-polaroid span3"></a>
 </div>
 
-<p><strong>Mit eingeloggtem User</strong></p>
+<p><strong>Mit eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/06_user_heavy_with_auth_average_reply_rate.svg"><img src="raw_data/phase_02/06_user_heavy_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -112,7 +114,7 @@
 <h3><a onclick="$('#phase_02_recipe_light').toggle()">Rezepte mit wenigen Zutaten</a></h3>
 
 <div id="phase_02_recipe_light" style="display:none">
-<p><strong>Ohne eingeloggtem User</strong></p>
+<p><strong>Ohne eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/07_recipe_light_average_reply_rate.svg"><img src="raw_data/phase_02/07_recipe_light_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -120,7 +122,7 @@
 	<a class="fancybox" href="raw_data/phase_02/07_recipe_light_errors.svg"><img src="raw_data/phase_02/07_recipe_light_errors.svg" class="img-polaroid span3"></a>
 </div>
 
-<p><strong>Mit eingeloggtem User</strong></p>
+<p><strong>Mit eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/08_recipe_light_with_auth_average_reply_rate.svg"><img src="raw_data/phase_02/08_recipe_light_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -132,7 +134,7 @@
 <h3><a onclick="$('#phase_02_recipe_heavy').toggle()">Rezepte mit vielen Zutaten</a></h3>
 
 <div id="phase_02_recipe_heavy" style="display:none">
-<p><strong>Ohne eingeloggtem User</strong></p>
+<p><strong>Ohne eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/09_recipe_heavy_average_reply_rate.svg"><img src="raw_data/phase_02/09_recipe_heavy_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -140,7 +142,7 @@
 	<a class="fancybox" href="raw_data/phase_02/09_recipe_heavy_errors.svg"><img src="raw_data/phase_02/09_recipe_heavy_errors.svg" class="img-polaroid span3"></a>
 </div>
 
-<p><strong>Mit eingeloggtem User</strong></p>
+<p><strong>Mit eingelogtem User</strong></p>
 
 <div class="row">
 	<a class="fancybox" href="raw_data/phase_02/10_recipe_heavy_with_auth_average_reply_rate.svg"><img src="raw_data/phase_02/10_recipe_heavy_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
@@ -152,6 +154,126 @@
 <h3>Fazit</h3>
 
 <p>Der Sinn dieses Durchlaufs war es für alle relevanten Seite festzustellen, wie sie performen. Da die Ausgangs-Applikation das sehr langsame SQLite verwendet, sind alle Tests gescheitert &ndash; ensprechend langweilig sind die daraus resultierenden Graphen. Im nächsten Schritt werde ich also versuchen MySQL zu verwenden und eine erneute Messung durchzuführen. Das Ziel der nächsten Phase wird sein Benchmarks zu generieren, die zumindest bei geringer Concurrency nicht in 100% Fehlern resultieren.</p>
+
+<!--
+================================================================================================================================================
+-->
+<h2>Phase 3</h2>
+
+<p>Die Konfiguration für diesen Test schaut folgendermaßen aus:</p>
+
+<ul>
+	<li>App-Server: Unicorn</li>
+	<li>Datenbank: MySQL</li>
+</ul>
+
+<p><em>Um die Graphen einer entsprechenden Testreihe anzuzeigen, einfach auf die Überschrift klicken.</em></p>
+
+<h3><a onclick="$('#phase_03_home').toggle()">Home</a></h3>
+
+<div id="phase_03_home" style="display:none">
+<p><strong>Ohne eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/02_home_average_reply_rate.svg"><img src="raw_data/phase_03/02_home_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/02_home_average_response_time.svg"><img src="raw_data/phase_03/02_home_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/02_home_errors.svg"><img src="raw_data/phase_03/02_home_errors.svg" class="img-polaroid span3"></a>
+</div>
+
+<p><strong>Mit eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/01_home_with_auth_average_reply_rate.svg"><img src="raw_data/phase_03/01_home_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/01_home_with_auth_average_response_time.svg"><img src="raw_data/phase_03/01_home_with_auth_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/01_home_with_auth_errors.svg"><img src="raw_data/phase_03/01_home_with_auth_errors.svg" class="img-polaroid span3"></a>
+</div>
+</div>
+
+<h3><a onclick="$('#phase_03_user_light').toggle()">User mit wenigen Rezepten</a></h3>
+
+<div id="phase_03_user_light" style="display:none">
+<p><strong>Ohne eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/03_user_light_average_reply_rate.svg"><img src="raw_data/phase_03/03_user_light_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/03_user_light_average_response_time.svg"><img src="raw_data/phase_03/03_user_light_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/03_user_light_errors.svg"><img src="raw_data/phase_03/03_user_light_errors.svg" class="img-polaroid span3"></a>
+</div>
+
+<p><strong>Mit eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/04_user_light_with_auth_average_reply_rate.svg"><img src="raw_data/phase_03/04_user_light_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/04_user_light_with_auth_average_response_time.svg"><img src="raw_data/phase_03/04_user_light_with_auth_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/04_user_light_with_auth_errors.svg"><img src="raw_data/phase_03/04_user_light_with_auth_errors.svg" class="img-polaroid span3"></a>
+</div>
+</div>
+
+<h3><a onclick="$('#phase_03_user_heavy').toggle()">User mit vielen Rezepten</a></h3>
+
+<div id="phase_03_user_heavy" style="display:none">
+<p><strong>Ohne eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/05_user_heavy_average_reply_rate.svg"><img src="raw_data/phase_03/05_user_heavy_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/05_user_heavy_average_response_time.svg"><img src="raw_data/phase_03/05_user_heavy_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/05_user_heavy_errors.svg"><img src="raw_data/phase_03/05_user_heavy_errors.svg" class="img-polaroid span3"></a>
+</div>
+
+<p><strong>Mit eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/06_user_heavy_with_auth_average_reply_rate.svg"><img src="raw_data/phase_03/06_user_heavy_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/06_user_heavy_with_auth_average_response_time.svg"><img src="raw_data/phase_03/06_user_heavy_with_auth_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/06_user_heavy_with_auth_errors.svg"><img src="raw_data/phase_03/06_user_heavy_with_auth_errors.svg" class="img-polaroid span3"></a>
+</div>
+</div>
+
+<h3><a onclick="$('#phase_03_recipe_light').toggle()">Rezepte mit wenigen Zutaten</a></h3>
+
+<div id="phase_03_recipe_light" style="display:none">
+<p><strong>Ohne eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/07_recipe_light_average_reply_rate.svg"><img src="raw_data/phase_03/07_recipe_light_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/07_recipe_light_average_response_time.svg"><img src="raw_data/phase_03/07_recipe_light_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/07_recipe_light_errors.svg"><img src="raw_data/phase_03/07_recipe_light_errors.svg" class="img-polaroid span3"></a>
+</div>
+
+<p><strong>Mit eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/08_recipe_light_with_auth_average_reply_rate.svg"><img src="raw_data/phase_03/08_recipe_light_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/08_recipe_light_with_auth_average_response_time.svg"><img src="raw_data/phase_03/08_recipe_light_with_auth_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/08_recipe_light_with_auth_errors.svg"><img src="raw_data/phase_03/08_recipe_light_with_auth_errors.svg" class="img-polaroid span3"></a>
+</div>
+</div>
+
+<h3><a onclick="$('#phase_03_recipe_heavy').toggle()">Rezepte mit vielen Zutaten</a></h3>
+
+<div id="phase_03_recipe_heavy" style="display:none">
+<p><strong>Ohne eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/09_recipe_heavy_average_reply_rate.svg"><img src="raw_data/phase_03/09_recipe_heavy_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/09_recipe_heavy_average_response_time.svg"><img src="raw_data/phase_03/09_recipe_heavy_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/09_recipe_heavy_errors.svg"><img src="raw_data/phase_03/09_recipe_heavy_errors.svg" class="img-polaroid span3"></a>
+</div>
+
+<p><strong>Mit eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_03/10_recipe_heavy_with_auth_average_reply_rate.svg"><img src="raw_data/phase_03/10_recipe_heavy_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/10_recipe_heavy_with_auth_average_response_time.svg"><img src="raw_data/phase_03/10_recipe_heavy_with_auth_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_03/10_recipe_heavy_with_auth_errors.svg"><img src="raw_data/phase_03/10_recipe_heavy_with_auth_errors.svg" class="img-polaroid span3"></a>
+</div>
+</div>
+
+<h3>Fazit</h3>
+
+<p>In diesem Benchmark-Durchlauf habe ich mir also die Performance mit MySQL angesehen. Gegenüber SQLite kam es zu erheblichen Verbesserungen, obwohl es noch immer Probleme zu geben scheint. Autotest behauptet z.B., dass bei "Home", ohne eingeloggten User ab 60 concurrent Requests 100% der Requests scheitern und dass die App eine durchschnittliche Response Time von 29728 Millisekunden hat. Beim Verfolgen des production.log zur Laufzeit des Tests, werden jedoch nie Werte über 400ms berichtet.</p>
+
+<p>In der nächsten Phase möchte ich noch die Performance der Startseite so weit bringen, dass es zu keinen Fehlern mehr kommt. Dafür möchte ich das das neue Russian-Doll Caching von Rails 4 verwenden, das auch als <a href="https://github.com/rails/cache_digests">Gem für Rails 3.2</a> veröffentlich wurde.</p>
 
 </div><!-- /.container -->
 

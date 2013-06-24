@@ -47,11 +47,11 @@ tests = {
   :recipe_heavy_with_auth => {
     :path => "/recipes/2097",
     :with_authentication => true
-  },
+  }
 }
 
 def results_path(test_name, i=0)
-  "/shared/arecipe/analysis/raw_data/phase_02/#{"%02d" % i}_#{test_name}.csv"
+  "/shared/arecipe/analysis/raw_data/phase_03/#{"%02d" % i}_#{test_name}.csv"
 end
 
 
