@@ -16,42 +16,42 @@ tests = {
   :home => {
     :path => "/"
   },
-  :user_light => {
-    :path => "/users/51"
-  },
-  :user_heavy => {
-    :path => "/users/43"
-  },
-  :recipe_light => {
-    :path => "/recipes/2056"
-  },
-  :recipe_heavy => {
-    :path => "/recipes/2097"
-  },
+  # :user_light => {
+  #   :path => "/users/51"
+  # },
+  # :user_heavy => {
+  #   :path => "/users/43"
+  # },
+  # :recipe_light => {
+  #   :path => "/recipes/2056"
+  # },
+  # :recipe_heavy => {
+  #   :path => "/recipes/2097"
+  # },
   :home_with_auth => {
     :path => "/",
     :with_authentication => true
-  },
-  :user_light_with_auth => {
-    :path => "/users/51",
-    :with_authentication => true
-  },
-  :user_heavy_with_auth => {
-    :path => "/users/43",
-    :with_authentication => true
-  },
-  :recipe_light_with_auth => {
-    :path => "/recipes/2056",
-    :with_authentication => true
-  },
-  :recipe_heavy_with_auth => {
-    :path => "/recipes/2097",
-    :with_authentication => true
-  }
+  }#,
+  # :user_light_with_auth => {
+  #   :path => "/users/51",
+  #   :with_authentication => true
+  # },
+  # :user_heavy_with_auth => {
+  #   :path => "/users/43",
+  #   :with_authentication => true
+  # },
+  # :recipe_light_with_auth => {
+  #   :path => "/recipes/2056",
+  #   :with_authentication => true
+  # },
+  # :recipe_heavy_with_auth => {
+  #   :path => "/recipes/2097",
+  #   :with_authentication => true
+  # }
 }
 
 def results_path(test_name, i=0)
-  "/shared/arecipe/analysis/raw_data/phase_03/#{"%02d" % i}_#{test_name}.csv"
+  "/shared/arecipe/analysis/raw_data/phase_04/#{"%02d" % i}_#{test_name}.csv"
 end
 
 

@@ -275,6 +275,27 @@
 
 <p>In der nächsten Phase möchte ich noch die Performance der Startseite so weit bringen, dass es zu keinen Fehlern mehr kommt. Dafür möchte ich das das neue Russian-Doll Caching von Rails 4 verwenden, das auch als <a href="https://github.com/rails/cache_digests">Gem für Rails 3.2</a> veröffentlich wurde.</p>
 
+<h2>Phase 4</h2>
+
+<p>Dank dem <code>cache_digest</code> Gem konnte ich mein Ziel erreichen und die Error-Rate auf 0 drücken:</p>
+
+<p><strong>Home ohne eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_04/01_home_average_reply_rate.svg"><img src="raw_data/phase_04/01_home_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_04/01_home_average_response_time.svg"><img src="raw_data/phase_04/01_home_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_04/01_home_errors.svg"><img src="raw_data/phase_04/01_home_errors.svg" class="img-polaroid span3"></a>
+</div>
+
+<p><strong>Home mit eingelogtem User</strong></p>
+
+<div class="row">
+	<a class="fancybox" href="raw_data/phase_04/02_home_with_auth_average_reply_rate.svg"><img src="raw_data/phase_04/02_home_with_auth_average_reply_rate.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_04/02_home_with_auth_average_response_time.svg"><img src="raw_data/phase_04/02_home_with_auth_average_response_time.svg" class="img-polaroid span3"></a>
+	<a class="fancybox" href="raw_data/phase_04/02_home_with_auth_errors.svg"><img src="raw_data/phase_04/02_home_with_auth_errors.svg" class="img-polaroid span3"></a>
+</div>
+
+<p>Als nächstes möchte ich noch probieren, ob ich die Performance der Startseite weiter verbessern kann, indem ich ein anderes Cache-Backend verwende (Rails benutzt standardmäßig das Dateisystem). Meine Beobachtung zeigt jedoch, dass der Arbeitsspeicher der virtuellen Maschine bereits stark ausgelastet ist, und es ist fraglich ob memcached noch genug Ressourcen zur Verfügung stehen um einen positiven Einfluss zu haben.</p>
 </div><!-- /.container -->
 
 <script type="text/javascript">
