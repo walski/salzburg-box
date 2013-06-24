@@ -12,8 +12,8 @@
 ### Ergebnisse des Ausgangssystems
 
 * Homepage: 0.17 [#/sec]
-* Users: ~ 0.20
-* Recipes: ~ 1.35
+* Users: ~ 0.20 [#/sec]
+* Recipes: ~ 1.35 [#/sec]
 
 ### Ergebnisse aus vorherigem Schritt
 

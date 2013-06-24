@@ -4,7 +4,7 @@
 
 *   Ruby-1.9.3
 *   Unicorn 
-*   Production Mode
+*   Production Mode#
 *   mySQL
 
 ## Server starten mit bundle exec unicorn -p 300 -c ./config/unicorn.rb -E production
@@ -14,8 +14,8 @@
 ### Ergebnisse des Ausgangssystems
 
 * Homepage: 0.17 [#/sec]
-* Users: ~ 0.20
-* Recipes: ~ 1.35
+* Users: ~ 0.20 [#/sec]
+* Recipes: ~ 1.35 [#/sec]
 
 ### Ergebnisse aus vorherigem Schritt
 

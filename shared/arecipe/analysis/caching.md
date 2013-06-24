@@ -15,8 +15,8 @@
 ### Ergebnisse des Ausgangssystems
 
 * Homepage: 0.17 [#/sec]
-* Users: ~ 0.20
-* Recipes: ~ 1.35
+* Users: ~ 0.20 [#/sec]
+* Recipes: ~ 1.35 [#/sec]
 
 ### Ergebnisse aus vorherigem Schritt
 
@@ -35,10 +35,6 @@
 * Improved front page requests per second by 36241%
 * Improved user page requests per second by 32090%
 * Improved page requests per second by 4553%
-
-## Nächster Schritt
-
-* Als letzter Schritt soll Caching eingebaut werden, sodass bei mehrfachem Zugriff weniger Daten geladen werden müssen.
 
 ## Durchgeführte Tests
 

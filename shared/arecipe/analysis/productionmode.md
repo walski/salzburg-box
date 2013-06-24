@@ -12,8 +12,8 @@
 ### Ergebnisse aus vorherigem Schritt
 
 * Homepage: 0.17 [#/sec]
-* Users: ~ 0.20
-* Recipes: ~ 1.35
+* Users: ~ 0.20 [#/sec]
+* Recipes: ~ 1.35 [#/sec]
 
 ### Neue Ergebnisse
 
