@@ -1,0 +1,11 @@
+dem_req_rate	req_rate_localhost	con_rate_localhost	min_rep_rate_localhost	avg_rep_rate_localhost	max_rep_rate_localhost	stddev_rep_rate_localhost	resp_time_localhost	net_io_localhost	errors_localhost
+20	4.9	3.3	2.8	3.3	3.6	0.2	19988.0	9.6	50
+40	5.0	3.3	3.2	3.4	4.0	0.3	20570.1	9.8	50
+60	5.0	3.3	3.0	3.3	3.6	0.3	20689.7	9.7	50
+80	5.0	3.3	3.0	3.4	3.8	0.3	20794.6	9.8	50
+100	5.0	3.4	2.8	3.4	3.8	0.3	20878.1	9.8	50
+120	5.0	3.4	3.2	3.4	4.0	0.3	20848.2	9.8	50
+140	5.0	3.4	3.0	3.3	3.8	0.3	20955.6	9.8	50
+160	5.0	3.3	2.8	3.3	3.8	0.3	20946.0	9.7	50
+180	4.9	3.3	3.0	3.3	3.6	0.2	21145.0	9.6	50
+200	5.0	3.3	3.0	3.3	3.8	0.3	21099.1	9.7	50

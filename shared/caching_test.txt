@@ -1,0 +1,142 @@
+--------------------------------------------------------------------------------------------------- No Caching
+
+vagrant@rails-starter-box:/shared/selfstarter$ ab -n100 -c10 http://localhost:3000/scaling/recipes
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/recipes
+Document Length:        7057 bytes
+
+Concurrency Level:      10
+Time taken for tests:   95.857 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      744800 bytes
+HTML transferred:       705700 bytes
+Requests per second:    1.04 [#/sec] (mean)
+Time per request:       9585.695 [ms] (mean)
+Time per request:       958.569 [ms] (mean, across all concurrent requests)
+Transfer rate:          7.59 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       0
+Processing:  9480 9585  69.5   9570    9703
+Waiting:     9480 9585  69.4   9570    9703
+Total:       9480 9586  69.5   9571    9703
+
+Percentage of the requests served within a certain time (ms)
+  50%   9571
+  66%   9637
+  75%   9655
+  80%   9656
+  90%   9703
+  95%   9703
+  98%   9703
+  99%   9703
+ 100%   9703 (longest request)
+
+--------------------------------------------------------------------------------------------------- Caching: Dalli
+
+ vagrant@rails-starter-box:/shared/selfstarter$ ab -n100 -c10 http://localhost:3000/scaling/recipes
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/recipes
+Document Length:        20072 bytes
+
+Concurrency Level:      10
+Time taken for tests:   9.606 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Non-2xx responses:      100
+Total transferred:      2038500 bytes
+HTML transferred:       2007200 bytes
+Requests per second:    10.41 [#/sec] (mean)
+Time per request:       960.642 [ms] (mean)
+Time per request:       96.064 [ms] (mean, across all concurrent requests)
+Transfer rate:          207.23 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:   915  961  93.4    933    1239
+Waiting:      914  960  93.4    933    1238
+Total:        915  961  93.4    933    1239
+
+Percentage of the requests served within a certain time (ms)
+  50%    933
+  66%    936
+  75%    938
+  80%    945
+  90%   1238
+  95%   1238
+  98%   1239
+  99%   1239
+ 100%   1239 (longest request)
+
+--------------------------------------------------------------------------------------------------- Caching: Dalli
+
+ vagrant@rails-starter-box:/shared/selfstarter$ ab -n100 -c10 http://localhost:3000/scaling/recipes
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        thin
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /scaling/recipes
+Document Length:        20072 bytes
+
+Concurrency Level:      10
+Time taken for tests:   9.418 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Non-2xx responses:      100
+Total transferred:      2038500 bytes
+HTML transferred:       2007200 bytes
+Requests per second:    10.62 [#/sec] (mean)
+Time per request:       941.837 [ms] (mean)
+Time per request:       94.184 [ms] (mean, across all concurrent requests)
+Transfer rate:          211.37 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       0
+Processing:   919  942  20.6    938     979
+Waiting:      918  941  20.6    937     978
+Total:        919  942  20.6    938     979
+
+Percentage of the requests served within a certain time (ms)
+  50%    938
+  66%    938
+  75%    959
+  80%    975
+  90%    979
+  95%    979
+  98%    979
+  99%    979
+ 100%    979 (longest request)

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="600 100 360 200" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="scruffy_graph">
+    <g transform="translate(0.0, 0.0)" id="background">
+      <defs>
+        <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="BackgroundGradient">
+          <stop offset="5%" stop-color="black"/>
+          <stop offset="95%" stop-color="#4A465A"/>
+        </linearGradient>
+      </defs>
+      <rect height="360.0" x="0" width="600.0" fill="url(#BackgroundGradient)" y="0"/>
+    </g>
+    <g transform="translate(30.0, 7.2)" id="title">
+      <text stroke-width="0" x="270.0" class="title" font-size="25.2" text-anchor="middle" font-family="" stroke="none" fill="white" y="25.2">Average Response Time (in ms)</text>
+    </g>
+    <g transform="translate(12.0, 93.6)" id="view">
+      <g>
+        <g transform="translate(0.0, 4.752)" id="values">
+          <text x="96.12" font-size="16.91712" text-anchor="end" font-family="" fill="white" y="211.464">0</text>
+          <text x="96.12" font-size="16.91712" text-anchor="end" font-family="" fill="white" y="158.598">3,517</text>
+          <text x="96.12" font-size="16.91712" text-anchor="end" font-family="" fill="white" y="105.732">7,034</text>
+          <text x="96.12" font-size="16.91712" text-anchor="end" font-family="" fill="white" y="52.866">10,551</text>
+          <text x="96.12" font-size="16.91712" text-anchor="end" font-family="" fill="white" y="0.0">14,068</text>
+        </g>
+        <g transform="translate(106.8, 0.0)" id="grid">
+          <line x1="0" y1="0.0" x2="427.2" style="stroke: white; stroke-width: 2;" y2="0.0"/>
+          <line x1="0" y1="52.866" x2="427.2" style="stroke: white; stroke-width: 2;" y2="52.866"/>
+          <line x1="0" y1="105.732" x2="427.2" style="stroke: white; stroke-width: 2;" y2="105.732"/>
+          <line x1="0" y1="158.598" x2="427.2" style="stroke: white; stroke-width: 2;" y2="158.598"/>
+          <line x1="0" y1="211.464" x2="427.2" style="stroke: white; stroke-width: 2;" y2="211.464"/>
+        </g>
+        <g transform="translate(106.8, 218.592)" id="labels">
+          <text x="0.0" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">20.0</text>
+          <text x="47.4666666666667" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">40.0</text>
+          <text x="94.9333333333333" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">60.0</text>
+          <text x="142.4" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">80.0</text>
+          <text x="189.866666666667" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">100.0</text>
+          <text x="237.333333333333" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">120.0</text>
+          <text x="284.8" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">140.0</text>
+          <text x="332.266666666667" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">160.0</text>
+          <text x="379.733333333333" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">180.0</text>
+          <text x="427.2" font-size="17.1072" text-anchor="middle" font-family="" fill="white" y="19.008">200.0</text>
+        </g>
+        <g transform="translate(106.8, 0.0)" id="graphs">
+          <g class="graph_layer" id="component_graphs_graph_0">
+            <g transform="translate(1.05732, 1.05732)" class="shadow">
+              <polyline stroke-width="4.22928" points="0.0,10.1326312108159 47.4666666666667,8.0447770716936 94.9333333333333,1.52117234614238 142.4,3.8780876018254 189.866666666667,11.5831562246769 237.333333333333,33.8310533543737 284.8,15.8640839339788 332.266666666667,19.0853016590609 379.733333333333,0.0 427.2,28.2829830681964" style="fill-opacity: 0; stroke-opacity: 0.35" stroke="black" fill="transparent"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="0.0" cy="12.0358072108159" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="47.4666666666667" cy="9.9479530716936" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="94.9333333333333" cy="3.42434834614238" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="142.4" cy="5.7812636018254" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="189.866666666667" cy="13.4863322246769" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="237.333333333333" cy="35.7342293543737" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="284.8" cy="17.7672599339788" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="332.266666666667" cy="20.9884776590609" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="379.733333333333" cy="1.903176" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="427.2" cy="30.1861590681964" r="4.22928"/>
+            </g>
+            <polyline stroke-width="4.22928" points="0.0,10.1326312108159 47.4666666666667,8.0447770716936 94.9333333333333,1.52117234614238 142.4,3.8780876018254 189.866666666667,11.5831562246769 237.333333333333,33.8310533543737 284.8,15.8640839339788 332.266666666667,19.0853016590609 379.733333333333,0.0 427.2,28.2829830681964" stroke="#6886B4" fill="none"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="0.0" cy="10.1326312108159" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="47.4666666666667" cy="8.0447770716936" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="94.9333333333333" cy="1.52117234614238" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="142.4" cy="3.8780876018254" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="189.866666666667" cy="11.5831562246769" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="237.333333333333" cy="33.8310533543737" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="284.8" cy="15.8640839339788" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="332.266666666667" cy="19.0853016590609" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="379.733333333333" cy="0.0" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="427.2" cy="28.2829830681964" r="4.22928"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(30.0, 46.8)" id="legend">
+      <rect height="10.8" x="151.2" width="10.8" fill="#6886B4" y="0"/>
+      <text x="170.64" font-size="15.552" style="color: white" font-family="" fill="white" y="11.664">Average Response Time</text>
+    </g>
+  </g>
+</svg>

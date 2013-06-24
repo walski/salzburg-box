@@ -80,9 +80,6 @@ class install-rvm {
     'ruby-1.8.7-p370':
       ensure => 'present',
       default_use => false;
-    'ruby-enterprise-1.8.7':
-      ensure => 'present',
-      default_use => false;
     'jruby-1.7.4':
       ensure => 'present',
       default_use => false;
@@ -100,12 +97,6 @@ class install-rvm {
     'ruby-1.8.7-p370/rake': ensure => latest;
     'ruby-1.8.7-p370/thin': ensure => latest;
     'ruby-1.8.7-p370/unicorn': ensure => latest;
-
-    'ree-1.8.7-2012.02/bundler': ensure => latest;
-    'ree-1.8.7-2012.02/rails': ensure => latest;
-    'ree-1.8.7-2012.02/rake': ensure => latest;
-    'ree-1.8.7-2012.02/thin': ensure => latest;
-    'ree-1.8.7-2012.02/unicorn': ensure => latest;
 
     'jruby-1.7.4/bundler': ensure => latest;
     'jruby-1.7.4/rails': ensure => latest;

@@ -4,4 +4,4 @@ set xlabel "request"
 set ylabel "response time (ms)"
 set term pngcairo
 set output "/shared/output.png"
-plot "/tmp/ab.dat" using 9 smooth sbezier with line title "test #1"
+plot "/tmp/simple100.dat" using 9 smooth sbezier with line title "test #1"

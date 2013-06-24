@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="600 100 360 200">
+  <g id="scruffy_graph">
+    <g transform="translate(0.0, 0.0)" id="background">
+      <defs>
+        <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="BackgroundGradient">
+          <stop stop-color="black" offset="5%"/>
+          <stop stop-color="#4A465A" offset="95%"/>
+        </linearGradient>
+      </defs>
+      <rect height="360.0" x="0" width="600.0" fill="url(#BackgroundGradient)" y="0"/>
+    </g>
+    <g transform="translate(30.0, 7.2)" id="title">
+      <text font-family="" stroke-width="0" x="270.0" class="title" font-size="25.2" stroke="none" fill="white" y="25.2" text-anchor="middle">Errors (in percent)</text>
+    </g>
+    <g transform="translate(12.0, 93.6)" id="view">
+      <g>
+        <g transform="translate(0.0, 4.752)" id="values">
+          <text font-family="" x="96.12" font-size="16.91712" fill="white" y="211.464" text-anchor="end">0</text>
+          <text font-family="" x="96.12" font-size="16.91712" fill="white" y="158.598" text-anchor="end">25</text>
+          <text font-family="" x="96.12" font-size="16.91712" fill="white" y="105.732" text-anchor="end">50</text>
+          <text font-family="" x="96.12" font-size="16.91712" fill="white" y="52.866" text-anchor="end">75</text>
+          <text font-family="" x="96.12" font-size="16.91712" fill="white" y="0.0" text-anchor="end">100</text>
+        </g>
+        <g transform="translate(106.8, 0.0)" id="grid">
+          <line x1="0" y1="0.0" x2="427.2" style="stroke: white; stroke-width: 2;" y2="0.0"/>
+          <line x1="0" y1="52.866" x2="427.2" style="stroke: white; stroke-width: 2;" y2="52.866"/>
+          <line x1="0" y1="105.732" x2="427.2" style="stroke: white; stroke-width: 2;" y2="105.732"/>
+          <line x1="0" y1="158.598" x2="427.2" style="stroke: white; stroke-width: 2;" y2="158.598"/>
+          <line x1="0" y1="211.464" x2="427.2" style="stroke: white; stroke-width: 2;" y2="211.464"/>
+        </g>
+        <g transform="translate(106.8, 218.592)" id="labels">
+          <text font-family="" x="0.0" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">20.0</text>
+          <text font-family="" x="47.4666666666667" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">40.0</text>
+          <text font-family="" x="94.9333333333333" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">60.0</text>
+          <text font-family="" x="142.4" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">80.0</text>
+          <text font-family="" x="189.866666666667" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">100.0</text>
+          <text font-family="" x="237.333333333333" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">120.0</text>
+          <text font-family="" x="284.8" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">140.0</text>
+          <text font-family="" x="332.266666666667" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">160.0</text>
+          <text font-family="" x="379.733333333333" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">180.0</text>
+          <text font-family="" x="427.2" font-size="17.1072" fill="white" y="19.008" text-anchor="middle">200.0</text>
+        </g>
+        <g transform="translate(106.8, 0.0)" id="graphs">
+          <g class="graph_layer" id="component_graphs_graph_0">
+            <g transform="translate(1.05732, 1.05732)" class="shadow">
+              <polyline stroke-width="4.22928" points="0.0,91.6343999999999 47.4666666666667,41.652 94.9333333333333,92.3392800000001 142.4,0.0 189.866666666667,69.0195000000001 237.333333333333,0.0 284.8,67.423304347826 332.266666666667,0.0 379.733333333333,69.522410958904 427.2,0.0" style="fill-opacity: 0; stroke-opacity: 0.35" stroke="black" fill="transparent"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="0.0" cy="93.5375759999999" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="47.4666666666667" cy="43.555176" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="94.9333333333333" cy="94.2424560000001" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="142.4" cy="1.903176" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="189.866666666667" cy="70.9226760000001" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="237.333333333333" cy="1.903176" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="284.8" cy="69.326480347826" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="332.266666666667" cy="1.903176" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="379.733333333333" cy="71.425586958904" r="4.22928"/>
+              <circle style="stroke-width: 4.22928; stroke: black; opacity: 0.35;" cx="427.2" cy="1.903176" r="4.22928"/>
+            </g>
+            <polyline stroke-width="4.22928" points="0.0,91.6343999999999 47.4666666666667,41.652 94.9333333333333,92.3392800000001 142.4,0.0 189.866666666667,69.0195000000001 237.333333333333,0.0 284.8,67.423304347826 332.266666666667,0.0 379.733333333333,69.522410958904 427.2,0.0" stroke="#6886B4" fill="none"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="0.0" cy="91.6343999999999" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="47.4666666666667" cy="41.652" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="94.9333333333333" cy="92.3392800000001" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="142.4" cy="0.0" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="189.866666666667" cy="69.0195000000001" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="237.333333333333" cy="0.0" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="284.8" cy="67.423304347826" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="332.266666666667" cy="0.0" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="379.733333333333" cy="69.522410958904" r="4.22928"/>
+            <circle style="stroke-width: 4.22928; stroke: #6886B4; fill: #6886B4" cx="427.2" cy="0.0" r="4.22928"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(30.0, 46.8)" id="legend">
+      <rect height="10.8" x="232.2" width="10.8" fill="#6886B4" y="0"/>
+      <text font-family="" x="251.64" style="color: white" font-size="15.552" fill="white" y="11.664">Errors</text>
+    </g>
+  </g>
+</svg>
