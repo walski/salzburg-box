@@ -44,10 +44,11 @@ Nach dem Analysieren der Plots habe ich mich entschieden noch einige Tests auszu
 ###ZIELSETZUNG:
 Da ich keine Ahnung habe wie sehr sich die geplanten Änderungen auswirken gibt es hier die erste vorsichtige Zielsetzung:
 
-Unter der Url "/" 10 Complete Requests von 10 ausgeführten Request bei einer concurrency von 1
+1. Unter der Url "/" 10 Complete Requests von 10 ausgeführten Request bei einer concurrency von 1
 
-Unter der Url "/" soll die langsamste Response time nicht höher als 4 Sekunden sein.
+2. Unter der Url "/" soll die langsamste Response time nicht höher als 4 Sekunden sein.
 
-Unter den "/users" eine 50% schnellere Response time.
+3. Unter den "/users" eine 50% schnellere Response time.
 
-Unter den "/recipes" eine 50% schnellere Response time.
+4. Unter den "/recipes" eine 50% schnellere Response time.
+

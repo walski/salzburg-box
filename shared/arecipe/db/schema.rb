@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610114518) do
+ActiveRecord::Schema.define(:version => 20130623234702) do
 
   create_table "ingredients", :force => true do |t|
     t.float    "price"
@@ -21,12 +20,16 @@ ActiveRecord::Schema.define(:version => 20130610114518) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "ingredients", ["price"], :name => "index_ingredients_on_price"
+
   create_table "likes", :force => true do |t|
     t.integer  "recipe_id"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "likes", ["recipe_id"], :name => "index_likes_on_recipe_id"
 
   create_table "preparation_steps", :force => true do |t|
     t.integer  "recipe_id"
@@ -36,6 +39,9 @@ ActiveRecord::Schema.define(:version => 20130610114518) do
     t.datetime "updated_at",   :null => false
   end
 
+  add_index "preparation_steps", ["duration"], :name => "index_preparation_steps_on_duration"
+  add_index "preparation_steps", ["recipe_id"], :name => "index_preparation_steps_on_recipe_id"
+
   create_table "recipe_ingredients", :force => true do |t|
     t.integer  "recipe_id"
     t.integer  "ingredient_id"
@@ -43,6 +49,9 @@ ActiveRecord::Schema.define(:version => 20130610114518) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
+
+  add_index "recipe_ingredients", ["amount"], :name => "index_recipe_ingredients_on_amount"
+  add_index "recipe_ingredients", ["recipe_id"], :name => "index_recipe_ingredients_on_recipe_id"
 
   create_table "recipes", :force => true do |t|
     t.string   "name"
